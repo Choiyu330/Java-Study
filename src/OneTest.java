@@ -10,7 +10,7 @@ public class OneTest {
         System.out.println(staticField2.num1);
 
         staticField1.num2 = 150;
-        staticField2.num2 = 2000;
+        staticField2.num2 = 1000;
         System.out.println(staticField1.num2);
         System.out.println(staticField2.num2);
 
