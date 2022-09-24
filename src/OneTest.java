@@ -4,7 +4,7 @@ public class OneTest {
         One staticField2 = new One();
 
         staticField1.num1 = 100;
-        staticField2.num1 = 1000;
+        staticField2.num1 = 2000;
 
         System.out.println(staticField1.num1);
         System.out.println(staticField2.num1);
