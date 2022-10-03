@@ -17,18 +17,17 @@ public class convertListToObject {
 
     }
     public static HashMap<String, String> convertListToHashMap(String[][] arr) {
-        // TODO:
-        HashMap<String, String> result = new HashMap<>();
-        if(arr.length == 0) return result;
+        HashMap<String, String> hashmap = new HashMap<>();
 
-        for(int i = 0; i < arr.length; i++) {
+        for(int i=0; i<arr.length; i++) {
+            // 빈 배열이 아니고 배열 안에 아무것도 들어있지 않을 때 hashmap에 key, value 값 넣기
             if(arr[i].length != 0) {
-                if(!result.containsKey(arr[i][0])) {
-                    result.put(arr[i][0], arr[i][1]);
+                if(!hashmap.containsKey(arr[i][0])) {
+                    hashmap.put(arr[i][0], arr[i][1]);
                 }
             }
         }
-        return result;
+        return hashmap;
     }
 }
 
