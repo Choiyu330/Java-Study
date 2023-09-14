@@ -2,17 +2,34 @@ package DailyCoding;
 
 class Solution {
     public static void main(String[] args) {
-        System.out.println(solution(0, new int[]{1,2,3}));
+        System.out.println(solution("abcdcba"));
     }
-    public static int solution(int sum, int[] coins) {
-        int[] answer = new int[sum + 1];
-        // sum 이 0일 때
-        answer[0] = 1;
-        for (int coin : coins) {
-            for (int i=coin; i<=sum; i++) {
-                answer[i] += answer[i - coin];
+    public static int solution(String s) {
+        int answer = 0;
+
+        for(int i=0; i<s.length(); i++) {
+            for(int j=i; j<s.length(); j++) {
+                String str = s.substring(i, j+1);
+
+                if(isPalin(str)) {
+                    if(str.length() > answer)
+                        answer = str.length();
+                }
             }
         }
-        return answer[sum];
+        return answer;
+    }
+    private static Boolean isPalin(String str) {
+        int start = 0;
+        int end = str.length() - 1;
+
+        while(start < end) {
+            if(str.charAt(start) != str.charAt(end))
+                return false;
+
+            start++;
+            end--;
+        }
+        return true;
     }
 }
